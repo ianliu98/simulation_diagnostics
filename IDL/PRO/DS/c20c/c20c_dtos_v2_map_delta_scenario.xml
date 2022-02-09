@@ -1,0 +1,212 @@
+;+
+; NAME:
+;    c20c_dtos_v2_map_delta_scenario.xml
+;
+; PURPOSE:
+;    This library contains settings for default attributable warming estimates 
+;    used in the C20C+ Detection and Attribution project.
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    ---
+;
+; PROCEDURE:
+;    <scenario>:  Starts a list of settings for a specific attributable warming 
+;        estimate.
+;    <attribute_institution>:  Starts a subentry for the institution attribute 
+;        value.
+;    <independent_algebra>:  An algebraic equation describing how to combine 
+;        input scenarios when calculating the attributable estimate.  For 
+;        instance to estimate the anthropogenic warming from CMIP5 "historical" 
+;        and "historicalNat" simulations, one could input 
+;        'Historical - HistorcalNat'.  Note that the labels used are arbitrary, 
+;        but the same labels must be used in place of the "EXPERIMENT" in the 
+;        <independent_EXPERIMENT_file> subentry.
+;    <independent_variable>:  Starts a subentry providing the variable label to 
+;        use in the input data files, following CF/CMIP5/C20C+ D&A protocols.  
+;        For instance 'tos' is sea surface temperature, 'ts' is skin surface 
+;        temperature, and 'tas' is surface air temperature.
+;    <independent_EXPERIMENT_file>:  Starts a subentry listing the files 
+;        containing data from independent experiment "EXPERIMENT" for use in 
+;        characterising that experiment.  The "EXPERIMENT" should be replaced 
+;        by a label, in particular the appropriate label used in the 
+;        <independent_algebra> subentry.  So for the 
+;        'Historical - HistoricalNat' example for <independent_algebra>, there 
+;        should be two subentries indicatedd by '<independent_Historical_file>' 
+;        and '<independent_HistoricalNat_file>'.  For the file lists, multiple 
+;        realizations should be separated by an "&", while multiple files for a 
+;        specific realization should be separated by a "," and/or indicated 
+;        using a "*" wildcard.  A plausible example could be 
+;        'realization1_period1951-1960.nc,reaslization1_period1961-2010.nc & realization2_period*.nc,realization2_extra.nc'.
+;    <scenario_comment>:  Starts a subentry containing content for the global 
+;        comment attribute in the output NetCDF file.
+;    <scenario_domain>:  Starts a subentry describing the realm and frequency 
+;        for the output estimate.  This follows the "domain" format in the 
+;        C20C+ D&A project, so for instance 'Omon' denotes monthly ocean data.
+;    <scenario_name>:  Starts a subentry for the label for the scenario.  This 
+;        should be in the form 'experiment_family/experiment/subexperiment', 
+;        for instance 'Nat-Hist/CMIP5-est/v1-0' for the benchmark C20C+ D&A 
+;        estimate.
+;
+; EXAMPLE:
+;    ---
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2018-08-22
+;    Modified:  DAS, 2018-09-28 (Added Nat-Hist/CCSM4-est1/v1-0 and 
+;        Nat-Hist/CESM1-CAM5-est1/v1-0)
+;    Modified:  DAS, 2018-11-08 (Added Plus15-Future/CMIP5-est1/v1-0 and 
+;        Plus15-Future/CMIP5-MMM-est1-sp/v1-0 estimates)
+;-
+
+;***********************************************************************
+; The Nat-Hist/CMIP5-est1/v1-0 benchmark estimate
+
+<scenario>
+  <scenario_name>
+    Nat-Hist/CMIP5-est1/v1-0
+  </scenario_name>
+  <independent_variable>
+    ts
+  </independent_variable>
+  <independent_algebra>
+    HistoricalRCP45 - HistoricalNat
+  </independent_algebra>
+  <independent_HistoricalRCP45_file>
+    ts_Amon_bcc-csm1-1_historical_r1i1p1_185001-200512.nc,ts_Amon_bcc-csm1-1_rcp45_r1i1p1_200601-209912.nc & ts_Amon_BNU-ESM_historical_r1i1p1_185001-200512.nc,ts_Amon_BNU-ESM_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CNRM-CM5_historical_r1i1p1_*.nc,ts_Amon_CNRM-CM5_rcp45_r1i1p1_200601-205512.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r1i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r2i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r3i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r3i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r4i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r5i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r5i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r1i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r3i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r3i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r3i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r4i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r5i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r5i1p1_200601-210012.nc & ts_Amon_GFDL-CM3_historical_r1i1p1_*.nc,ts_Amon_GFDL-CM3_rcp45_r1i1p1_*.nc & ts_Amon_GFDL-ESM2M_historical_r1i1p1_*.nc,ts_Amon_GFDL-ESM2M_rcp45_r1i1p1_*.nc & ts_Amon_GISS-E2-H_historical_r1i1p1_*.nc,ts_Amon_GISS-E2-H_rcp45_r1i1p1_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r2i1p1_*.nc,ts_Amon_GISS-E2-H_rcp45_r2i1p1_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r3i1p1_*.nc,ts_Amon_GISS-E2-H_rcp45_r3i1p1_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r4i1p1_*.nc,ts_Amon_GISS-E2-H_rcp45_r4i1p1_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r5i1p1_*.nc,ts_Amon_GISS-E2-H_rcp45_r5i1p1_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r1i1p3_*.nc,ts_Amon_GISS-E2-H_rcp45_r1i1p3_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r2i1p3_*.nc,ts_Amon_GISS-E2-H_rcp45_r2i1p3_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r3i1p3_*.nc,ts_Amon_GISS-E2-H_rcp45_r3i1p3_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r4i1p3_*.nc,ts_Amon_GISS-E2-H_rcp45_r4i1p3_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r5i1p3_*.nc,ts_Amon_GISS-E2-H_rcp45_r5i1p3_200601-205012.nc & ts_Amon_GISS-E2-R_historical_r1i1p1_*.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p1_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p1_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r2i1p1_*.nc,ts_Amon_GISS-E2-R_rcp45_r2i1p1_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r2i1p1_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r3i1p1_*.nc,ts_Amon_GISS-E2-R_rcp45_r3i1p1_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r3i1p1_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r4i1p1_*.nc,ts_Amon_GISS-E2-R_rcp45_r4i1p1_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r4i1p1_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r5i1p1_*.nc,ts_Amon_GISS-E2-R_rcp45_r5i1p1_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r5i1p1_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r1i1p3_*.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p3_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p3_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r2i1p3_*.nc,ts_Amon_GISS-E2-R_rcp45_r2i1p3_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r2i1p3_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r3i1p3_*.nc,ts_Amon_GISS-E2-R_rcp45_r3i1p3_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r3i1p3_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r4i1p3_*.nc,ts_Amon_GISS-E2-R_rcp45_r4i1p3_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r4i1p3_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r5i1p3_*.nc,ts_Amon_GISS-E2-R_rcp45_r5i1p3_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r5i1p3_202601-205012.nc & ts_Amon_HadGEM2-ES_historical_r1i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r1i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r1i1p1_203012-205511.nc & ts_Amon_HadGEM2-ES_historical_r2i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r2i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r2i1p1_203012-205511.nc & ts_Amon_HadGEM2-ES_historical_r3i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r3i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r3i1p1_203012-205511.nc & ts_Amon_HadGEM2-ES_historical_r4i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r4i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r4i1p1_203012-205511.nc & ts_Amon_IPSL-CM5A-LR_historical_r1i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp45_r1i1p1_200601-230012.nc & ts_Amon_IPSL-CM5A-LR_historical_r2i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp45_r2i1p1_200601-210012.nc & ts_Amon_IPSL-CM5A-LR_historical_r3i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp45_r3i1p1_200601-210012.nc & ts_Amon_IPSL-CM5A-MR_historical_r1i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-MR_rcp45_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM_historical_r1i1p1_185001-200512.nc,ts_Amon_MIROC-ESM_rcp45_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM-CHEM_historical_r1i1p1_185001-200512.nc,ts_Amon_MIROC-ESM-CHEM_rcp45_r1i1p1_200601-210012.nc & ts_Amon_MRI-CGCM3_historical_r1i1p1_185001-200512.nc,ts_Amon_MRI-CGCM3_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r1i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r2i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r4i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r6i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r6i1p1_200601-210012.nc & ts_Amon_NorESM1-M_historical_r1i1p1_185001-200512.nc,ts_Amon_NorESM1-M_rcp45_r1i1p1_200601-210012.nc
+  </independent_HistoricalRCP45_file>
+  <independent_HistoricalNat_file>
+    ts_Amon_bcc-csm1-1_historicalNat_r1i1p1_185001-201212.nc & ts_Amon_BNU-ESM_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_CNRM-CM5_historicalNat_r1i1p1_*.nc & ts_Amon_CSIRO-Mk3-6-0_historicalNat_r1i1p1_185001-201212.nc & ts_Amon_CSIRO-Mk3-6-0_historicalNat_r2i1p1_185001-201212.nc & ts_Amon_CSIRO-Mk3-6-0_historicalNat_r3i1p1_185001-201212.nc & ts_Amon_CSIRO-Mk3-6-0_historicalNat_r4i1p1_185001-201212.nc & ts_Amon_CSIRO-Mk3-6-0_historicalNat_r5i1p1_185001-201212.nc & ts_Amon_CanESM2_historicalNat_r1i1p1_185001-201212.nc & ts_Amon_CanESM2_historicalNat_r2i1p1_185001-201212.nc & ts_Amon_CanESM2_historicalNat_r3i1p1_185001-201212.nc & ts_Amon_CanESM2_historicalNat_r4i1p1_185001-201212.nc & ts_Amon_CanESM2_historicalNat_r5i1p1_185001-201212.nc & ts_Amon_GFDL-CM3_historicalNat_r1i1p1_*.nc & ts_Amon_GFDL-ESM2M_historicalNat_r1i1p1_*.nc & ts_Amon_GISS-E2-H_historicalNat_r1i1p1_*.nc & ts_Amon_GISS-E2-H_historicalNat_r2i1p1_*.nc & ts_Amon_GISS-E2-H_historicalNat_r3i1p1_*.nc & ts_Amon_GISS-E2-H_historicalNat_r4i1p1_*.nc & ts_Amon_GISS-E2-H_historicalNat_r5i1p1_*.nc & ts_Amon_GISS-E2-H_historicalNat_r1i1p3_*.nc & ts_Amon_GISS-E2-H_historicalNat_r2i1p3_*.nc & ts_Amon_GISS-E2-H_historicalNat_r3i1p3_*.nc & ts_Amon_GISS-E2-H_historicalNat_r4i1p3_*.nc & ts_Amon_GISS-E2-H_historicalNat_r5i1p3_*.nc & ts_Amon_GISS-E2-R_historicalNat_r1i1p1_*.nc & ts_Amon_GISS-E2-R_historicalNat_r2i1p1_*.nc & ts_Amon_GISS-E2-R_historicalNat_r3i1p1_*.nc & ts_Amon_GISS-E2-R_historicalNat_r4i1p1_*.nc & ts_Amon_GISS-E2-R_historicalNat_r5i1p1_*.nc & ts_Amon_GISS-E2-R_historicalNat_r1i1p3_*.nc & ts_Amon_GISS-E2-R_historicalNat_r2i1p3_*.nc & ts_Amon_GISS-E2-R_historicalNat_r3i1p3_*.nc & ts_Amon_GISS-E2-R_historicalNat_r4i1p3_*.nc & ts_Amon_GISS-E2-R_historicalNat_r5i1p3_*.nc & ts_Amon_HadGEM2-ES_historicalNat_r1i1p1_*.nc & ts_Amon_HadGEM2-ES_historicalNat_r2i1p1_*.nc & ts_Amon_HadGEM2-ES_historicalNat_r3i1p1_*.nc & ts_Amon_HadGEM2-ES_historicalNat_r4i1p1_*.nc & ts_Amon_IPSL-CM5A-LR_historicalNat_r1i1p1_185001-201212.nc & ts_Amon_IPSL-CM5A-LR_historicalNat_r2i1p1_185001-201212.nc & ts_Amon_IPSL-CM5A-LR_historicalNat_r3i1p1_185001-201212.nc & ts_Amon_IPSL-CM5A-MR_historicalNat_r1i1p1_185001-201212.nc & ts_Amon_MIROC-ESM_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_MIROC-ESM-CHEM_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_MRI-CGCM3_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r2i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r4i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r6i1p1_185001-200512.nc & ts_Amon_NorESM1-M_historicalNat_r1i1p1_185001-200512.nc,ts_Amon_NorESM1-M_historicalNat_r1i1p1_200601-201212.nc
+  </independent_HistoricalNat_file>
+  <scenario_comment>
+    Attributable sea ice concentration change estimated according to: \\Stone, D. A., and P. Pall.  2018.  A benchmark estimate of the effect of anthropogenic emissions on the ocean surface.  In preparation.
+  </scenario_comment>
+  <scenario_domain>
+    Omon
+  </scenario_domain>
+  <notes>
+    ts_Amon_bcc-csm1-1_historical_r1i1p1, ts_Amon_HadGEM2-ES_historical_r2i1p1, and ts_Amon_HadGEM2-ES_historical_r3i1p1 need to have months removed from end of CMIP5 archive files in order to avoid overlap with RCP files.
+  </notes>
+</scenario>
+
+;***********************************************************************
+; The Nat-Hist/CCSM4-est1/v1-0 estimate
+
+<scenario>
+  <scenario_name>
+    Nat-Hist/CCSM4-est1/v1-0
+  </scenario_name>
+  <independent_variable>
+    ts
+  </independent_variable>
+  <independent_algebra>
+    HistoricalRCP45 - HistoricalNat
+  </independent_algebra>
+  <independent_HistoricalRCP45_file>
+    ts_Amon_CCSM4_historical_r1i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r2i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r4i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r6i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r6i1p1_200601-210012.nc
+  </independent_HistoricalRCP45_file>
+  <independent_HistoricalNat_file>
+    ts_Amon_CCSM4_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r2i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r4i1p1_185001-200512.nc & ts_Amon_CCSM4_historicalNat_r6i1p1_185001-200512.nc
+  </independent_HistoricalNat_file>
+  <scenario_comment>
+    Attributable sea ice concentration change estimated according to: \\Stone, D. A., and P. Pall.  2018.  A benchmark estimate of the effect of anthropogenic emissions on the ocean surface.  In preparation.
+  </scenario_comment>
+  <scenario_domain>
+    Omon
+  </scenario_domain>
+</scenario>
+
+;***********************************************************************
+; The Nat-Hist/CESM1-CAM5-est1/v1-0 estimate
+
+<scenario>
+  <scenario_name>
+    Nat-Hist/CESM1-CAM5-est1/v1-0
+  </scenario_name>
+  <independent_variable>
+    ts
+  </independent_variable>
+  <independent_algebra>
+    HistoricalRCP45 - HistoricalNat
+  </independent_algebra>
+  <independent_HistoricalRCP45_file>
+    ts_Amon_CESM1-CAM5_historical_r1i1p1_185001-200512.nc,ts_Amon_CESM1-CAM5_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CESM1-CAM5_historical_r2i1p1_185001-200512.nc,ts_Amon_CESM1-CAM5_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CESM1-CAM5_historical_r3i1p1_185001-200512.nc,ts_Amon_CESM1-CAM5_rcp45_r3i1p1_200601-210012.nc
+  </independent_HistoricalRCP45_file>
+  <independent_HistoricalNat_file>
+    ts_Amon_CESM1-CAM5_historicalNat_r1i1p1_185001-200512.nc & ts_Amon_CESM1-CAM5_historicalNat_r2i1p1_185001-200512.nc & ts_Amon_CESM1-CAM5_historicalNat_r3i1p1_185001-200512.nc
+  </independent_HistoricalNat_file>
+  <scenario_comment>
+    Attributable sea ice concentration change estimated according to: \\Stone, D. A., and P. Pall.  2018.  A benchmark estimate of the effect of anthropogenic emissions on the ocean surface.  In preparation.
+  </scenario_comment>
+  <scenario_domain>
+    Omon
+  </scenario_domain>
+</scenario>
+
+;***********************************************************************
+; The Plus15-Future/CMIP5-est1/v1-0 estimate
+; Consistent with C20C+ D&A Nat-Hist/CMIP5-est1/v1-0, except missing GISS-E2-H-p1 r2i1p1 to r5i1p1, GISS-E2-H-p3 r2i1p3 to r5i1p3, GISS-E2-R-p1 r2i1p1 to r5i1p1, and GISS-E2-R-p3 r2i1p3 to r5i1p3.
+
+<scenario>
+  <scenario_name>
+    Plus15/CMIP5-est1/v1-0
+  </scenario_name>
+  <independent_variable>
+    ts
+  </independent_variable>
+  <independent_algebra>
+    RCP26 - HistoricalRCP45
+  </independent_algebra>
+  <independent_RCP26_file>
+    ts_Amon_bcc-csm1-1_rcp26_r1i1p1_200601-209912.nc,ts_Amon_bcc-csm1-1_rcp26_r1i1p1_210001-230012.nc & ts_Amon_BNU-ESM_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CNRM-CM5_rcp26_r1i1p1_*.nc & ts_Amon_CSIRO-Mk3-6-0_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_rcp26_r2i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_rcp26_r3i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_rcp26_r4i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_rcp26_r5i1p1_200601-210012.nc & ts_Amon_CanESM2_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CanESM2_rcp26_r2i1p1_200601-210012.nc & ts_Amon_CanESM2_rcp26_r3i1p1_200601-210012.nc & ts_Amon_CanESM2_rcp26_r4i1p1_200601-210012.nc & ts_Amon_CanESM2_rcp26_r5i1p1_200601-210012.nc & ts_Amon_GFDL-CM3_rcp26_r1i1p1_*.nc & ts_Amon_GFDL-ESM2M_rcp26_r1i1p1_*.nc & ts_Amon_GISS-E2-H_rcp26_r1i1p1_*.nc & ts_Amon_GISS-E2-H_rcp26_r1i1p3_*.nc & ts_Amon_GISS-E2-R_rcp26_r1i1p1_*.nc & ts_Amon_GISS-E2-R_rcp26_r1i1p3_*.nc & ts_Amon_HadGEM2-ES_rcp26_r1i1p1_*.nc & ts_Amon_HadGEM2-ES_rcp26_r2i1p1_*.nc & ts_Amon_HadGEM2-ES_rcp26_r3i1p1_*.nc & ts_Amon_HadGEM2-ES_rcp26_r4i1p1_*.nc & ts_Amon_IPSL-CM5A-LR_rcp26_r1i1p1_200601-230012.nc & ts_Amon_IPSL-CM5A-LR_rcp26_r2i1p1_200601-210012.nc & ts_Amon_IPSL-CM5A-LR_rcp26_r3i1p1_200601-210012.nc & ts_Amon_IPSL-CM5A-MR_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM-CHEM_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MRI-CGCM3_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_rcp26_r2i1p1_200601-210012.nc & ts_Amon_CCSM4_rcp26_r4i1p1_200601-210012.nc & ts_Amon_CCSM4_rcp26_r6i1p1_200601-210012.nc & ts_Amon_NorESM1-M_rcp26_r1i1p1_200601-210012.nc
+  </independent_RCP26_file>
+  <independent_HistoricalRCP45_file>
+    ts_Amon_bcc-csm1-1_historical_r1i1p1_185001-201212.nc,ts_Amon_bcc-csm1-1_rcp45_r1i1p1_200601-209912.nc & ts_Amon_BNU-ESM_historical_r1i1p1_185001-200512.nc,ts_Amon_BNU-ESM_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CNRM-CM5_historical_r1i1p1_*.nc,ts_Amon_CNRM-CM5_rcp45_r1i1p1_200601-205512.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r1i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r2i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r3i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r3i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r4i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CSIRO-Mk3-6-0_historical_r5i1p1_185001-200512.nc,ts_Amon_CSIRO-Mk3-6-0_rcp45_r5i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r1i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r2i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r3i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r3i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r4i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r5i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp45_r5i1p1_200601-210012.nc & ts_Amon_GFDL-CM3_historical_r1i1p1_*.nc,ts_Amon_GFDL-CM3_rcp45_r1i1p1_*.nc & ts_Amon_GFDL-ESM2M_historical_r1i1p1_*.nc,ts_Amon_GFDL-ESM2M_rcp45_r1i1p1_*.nc & ts_Amon_GISS-E2-H_historical_r1i1p1_*.nc,ts_Amon_GISS-E2-H_rcp45_r1i1p1_200601-205012.nc & ts_Amon_GISS-E2-H_historical_r1i1p3_*.nc,ts_Amon_GISS-E2-H_rcp45_r1i1p3_200601-205012.nc & ts_Amon_GISS-E2-R_historical_r1i1p1_*.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p1_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p1_202601-205012.nc & ts_Amon_GISS-E2-R_historical_r1i1p3_*.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p3_200601-202512.nc,ts_Amon_GISS-E2-R_rcp45_r1i1p3_202601-205012.nc & ts_Amon_HadGEM2-ES_historical_r1i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r1i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r1i1p1_203012-205511.nc & ts_Amon_HadGEM2-ES_historical_r2i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r2i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r2i1p1_203012-205511.nc & ts_Amon_HadGEM2-ES_historical_r3i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r3i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r3i1p1_203012-205511.nc & ts_Amon_HadGEM2-ES_historical_r4i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp45_r4i1p1_200512-203011.nc,ts_Amon_HadGEM2-ES_rcp45_r4i1p1_203012-205511.nc & ts_Amon_IPSL-CM5A-LR_historical_r1i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp45_r1i1p1_200601-230012.nc & ts_Amon_IPSL-CM5A-LR_historical_r2i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp45_r2i1p1_200601-210012.nc & ts_Amon_IPSL-CM5A-LR_historical_r3i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp45_r3i1p1_200601-210012.nc & ts_Amon_IPSL-CM5A-MR_historical_r1i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-MR_rcp45_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM_historical_r1i1p1_185001-200512.nc,ts_Amon_MIROC-ESM_rcp45_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM-CHEM_historical_r1i1p1_185001-200512.nc,ts_Amon_MIROC-ESM-CHEM_rcp45_r1i1p1_200601-210012.nc & ts_Amon_MRI-CGCM3_historical_r1i1p1_185001-200512.nc,ts_Amon_MRI-CGCM3_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r1i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r2i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r2i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r4i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r4i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r6i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp45_r6i1p1_200601-210012.nc & ts_Amon_NorESM1-M_historical_r1i1p1_185001-200512.nc,ts_Amon_NorESM1-M_rcp45_r1i1p1_200601-210012.nc
+  </independent_HistoricalRCP45_file>
+  <scenario_comment>
+    Attributable sea ice concentration change estimated according to: \\Stone, D. A., and P. Pall.  2018.  A benchmark estimate of the effect of anthropogenic emissions on the ocean surface.  In preparation.
+  </scenario_comment>
+  <scenario_domain>
+    Omon
+  </scenario_domain>
+</scenario>
+
+;***********************************************************************
+; The Plus15-Future/CMIP5-MMM-est1-sp/v1-0 estimate
+; The benchmark HAPPI estimate, but possibly a different selection of the simulation from some models (the HAPPI benchmark is undocumented).
+
+<scenario>
+  <scenario_name>
+    Plus15/CMIP5-MMM-est1/v1-0
+  </scenario_name>
+  <independent_variable>
+    ts
+  </independent_variable>
+  <independent_algebra>
+    RCP26 - HistoricalRCP85
+  </independent_algebra>
+  <independent_RCP26_file>
+    ts_Amon_bcc-csm1-1_rcp26_r1i1p1_200601-209912.nc,ts_Amon_bcc-csm1-1_rcp26_r1i1p1_210001-230012.nc & ts_Amon_bcc-csm1-1-m_rcp26_r1i1p1_200601-210012.nc & ts_Amon_BNU-ESM_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CESM1-CAM5_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CanESM2_rcp26_r1i1p1_200601-210012.nc & ts_Amon_CNRM-CM5_rcp26_r1i1p1_200601-205512.nc,ts_Amon_CNRM-CM5_rcp26_r1i1p1_205601-210012.nc & ts_Amon_EC-EARTH_rcp26_r8i1p1_200601-205012.nc,ts_Amon_EC-EARTH_rcp26_r8i1p1_205101-210012.nc & ts_Amon_GFDL-CM3_rcp26_r1i1p1_*.nc & ts_Amon_GFDL-ESM2G_rcp26_r1i1p1_*.nc & ts_Amon_GFDL-ESM2M_rcp26_r1i1p1_*.nc & ts_Amon_GISS-E2-H_rcp26_r1i1p1_*.nc & ts_Amon_GISS-E2-R_rcp26_r1i1p1_*.nc & ts_Amon_HadGEM2-ES_rcp26_r1i1p1_*.nc & ts_Amon_IPSL-CM5A-LR_rcp26_r1i1p1_200601-230012.nc & ts_Amon_IPSL-CM5A-MR_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM-CHEM_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MPI-ESM-LR_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MPI-ESM-MR_rcp26_r1i1p1_200601-210012.nc & ts_Amon_MRI-CGCM3_rcp26_r1i1p1_200601-210012.nc & ts_Amon_NorESM1-M_rcp26_r1i1p1_200601-210012.nc & ts_Amon_NorESM1-ME_rcp26_r1i1p1_200601-206012.nc,ts_Amon_NorESM1-ME_rcp26_r1i1p1_206101-210112.nc
+  </independent_RCP26_file>
+  <independent_HistoricalRCP85_file>
+    ts_Amon_bcc-csm1-1_historical_r1i1p1_185001-201212.nc,ts_Amon_bcc-csm1-1_rcp85_r1i1p1_200601-209912.nc,ts_Amon_bcc-csm1-1_rcp85_r1i1p1_210001-230012.nc & ts_Amon_BNU-ESM_historical_r1i1p1_185001-200512.nc,ts_Amon_BNU-ESM_rcp85_r1i1p1_200601-210012.nc & ts_Amon_CESM1-CAM5_historical_r1i1p1_185001-200512.nc,ts_Amon_CESM1-CAM5_rcp85_r1i1p1_200601-210012.nc & ts_Amon_CCSM4_historical_r1i1p1_185001-200512.nc,ts_Amon_CCSM4_rcp85_r1i1p1_200601-210012.nc & ts_Amon_CanESM2_historical_r1i1p1_185001-200512.nc,ts_Amon_CanESM2_rcp85_r1i1p1_200601-210012.nc & ts_Amon_CNRM-CM5_historical_r1i1p1_*.nc,ts_Amon_CNRM-CM5_rcp85_r1i1p1_200601-205512.nc,ts_Amon_CNRM-CM5_rcp85_r1i1p1_205601-210012.nc & ts_Amon_EC-EARTH_historical_r8i1p1_*.nc,ts_Amon_EC-EARTH_rcp85_r8i1p1_200601-205012.nc,ts_Amon_EC-EARTH_rcp85_r8i1p1_205101-210012.nc & ts_Amon_GFDL-CM3_historical_r1i1p1_*.nc,ts_Amon_GFDL-CM3_rcp85_r1i1p1_*.nc & ts_Amon_GFDL-ESM2G_historical_r1i1p1_*.nc,ts_Amon_GFDL-ESM2G_rcp85_r1i1p1_*.nc & ts_Amon_GFDL-ESM2M_historical_r1i1p1_*.nc,ts_Amon_GFDL-ESM2M_rcp85_r1i1p1_*.nc & ts_Amon_GISS-E2-H_historical_r1i1p1_*.nc,ts_Amon_GISS-E2-H_rcp85_r1i1p1_*.nc & ts_Amon_GISS-E2-R_historical_r1i1p1_*.nc,ts_Amon_GISS-E2-R_rcp85_r1i1p1_*.nc & ts_Amon_HadGEM2-ES_historical_r1i1p1_*.nc,ts_Amon_HadGEM2-ES_rcp85_r1i1p1_*.nc & ts_Amon_IPSL-CM5A-LR_historical_r1i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-LR_rcp85_r1i1p1_200601-230012.nc & ts_Amon_IPSL-CM5A-MR_historical_r1i1p1_185001-200512.nc,ts_Amon_IPSL-CM5A-MR_rcp85_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM_historical_r1i1p1_185001-200512.nc,ts_Amon_MIROC-ESM_rcp85_r1i1p1_200601-210012.nc & ts_Amon_MIROC-ESM-CHEM_historical_r1i1p1_185001-200512.nc,ts_Amon_MIROC-ESM-CHEM_rcp85_r1i1p1_200601-210012.nc & ts_Amon_MPI-ESM-LR_historical_r1i1p1_185001-200512.nc,ts_Amon_MPI-ESM-LR_rcp85_r1i1p1_200601-210012.nc & ts_Amon_MPI-ESM-MR_historical_r1i1p1_185001-200512.nc,ts_Amon_MPI-ESM-MR_rcp85_r1i1p1_200601-210012.nc & ts_Amon_MRI-CGCM3_historical_r1i1p1_185001-200512.nc,ts_Amon_MRI-CGCM3_rcp85_r1i1p1_200601-210012.nc & ts_Amon_NorESM1-M_historical_r1i1p1_185001-200512.nc,ts_Amon_NorESM1-M_rcp85_r1i1p1_200601-210012.nc & ts_Amon_NorESM1-ME_historical_r1i1p1_185001-200512.nc,ts_Amon_NorESM1-ME_rcp85_r1i1p1_200601-204412.nc,ts_Amon_NorESM1-ME_rcp85_r1i1p1_204501-210012.nc
+  </independent_HistoricalRCP85_file>
+  <scenario_domain>
+    Omon
+  </scenario_domain>
+</scenario>
+

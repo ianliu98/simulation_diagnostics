@@ -1,0 +1,118 @@
+
+; INPUT:
+;     f(Vpara, Vperp)
+;     Vpara: -kcv to +cv
+;     Vperp: 0 to +cv
+
+
+FUNCTION growthrate, dis, we, kmp
+
+     ; model distribution for check
+     check = 0
+     if (check eq 1) then begin
+        uth_pa = 0.3
+        uth_pe = 0.3
+        for jpa=0, 201-1 do begin
+           for jpe=0, 101-1 do begin
+              upa = jpa/100.0 - 1.0
+              upe = jpe/100.0
+              dis[jpa, jpe] = 1.0/ ( (2.0*!pi)^1.5 * uth_pa * uth_pe^2)  $
+                              * Exp(-upa^2/(2.0*uth_pa^2)) * Exp(-upe^2/(2.0*uth_pe^2))
+           endfor
+        endfor
+     endif
+
+
+     print, 'Neglecting "relativity" and "displacement current"'
+             print, '   and assume "Maxwellian"'
+
+     dv=1.0
+     dw=0.01
+
+     pa_ax   = ( Findgen(2*kmp.cv/dv + 1) - kmp.cv/dv ) * dv
+     pe_ax   = Findgen(kmp.cv/dv +1) * dv
+
+     dv2 = 1./ (2.*dv)
+     nf = Fix(we/ dw)
+     omg = Findgen(nf) * dw + dw
+     ani  = Fltarr(nf)
+     ac = ani[*]
+     gr = ani[*] 
+     eta = ani[*]
+
+     ; Vr
+     in = {we:we, omg:omg, vpa:0.0, vpe:0.0}     ; non relativistic
+     out = PLASMA_PRM( 43, kmp, in=in )
+
+
+     FOR jf = 0, nf-1 DO BEGIN
+
+        ; +k is considered
+
+;        zeta2 = omg(jf) * (we - omg(jf))/ kmp.wp1^2
+;        delta2 = 1./ (1. + zeta2)
+;        vr = kmp.cv * SQRT(delta2) * SQRT(zeta2) * (1. - we/omg(jf))     ; negative
+
+        vr = out.vr[jf] * kmp.cv
+        jvr = Fix(vr + kmp.cv)/ dv
+
+        v1  = vr - dv/2.0
+        jv1 = Fix(v1 + kmp.cv)/ dv
+        if (jv1 lt 0) then begin
+           dis_v1=dis[0,*]
+        endif else begin
+           l1 = v1 - pa_ax[jv1]
+           l2 = 1.0 - l1
+           dis_v1 = dis[jv1,*] * l2  +  dis[jv1+1,*] * l1
+        endelse
+
+        v2  = vr + dv/2.0
+        jv2 = Fix(v2 + kmp.cv)/ dv
+        if (jv2 gt 2*kmp.cv/dv) then begin
+           dis_v2=dis[2*kmp.cv/dv,*]
+        endif else begin
+           l3 = v2 - pa_ax[jv2]
+           l4 = 1.0 - l3
+           dis_v2 = dis[jv2,*] * l4  +  dis[jv2+1,*] * l3
+        endelse
+
+        dis_vr = (dis_v1[*]+dis_v2[*])/ 2.0
+
+
+        a_nmr   = 0.0
+        a_dnm   = 0.0
+        eta_int = 0.0
+
+        FOR jpe = 1, kmp.cv/dv-2 DO BEGIN
+           vpe = pe_ax[jpe]
+           dis_pe = dis_vr[jpe]
+           a_nmr   = ( vpe *  $
+                     ( vr*(dis_vr[jpe+1]-dis_vr[jpe-1])/(2.0*dv)  $
+                       - vpe*(dis_v2[jpe] - dis_v1[jpe])/dv )  $
+                       * vpe/ vr ) * dv $
+                     +  a_nmr
+           a_dnm   = 2.0 * (vpe * dis_pe)*dv  +  a_dnm
+           eta_int = vpe * dis_pe*dv  +  eta_int
+        ENDFOR
+
+        ; --- eta ---
+        eta[jf] = 2.0 * !pi * (-vr/kmp.cv) * eta_int
+
+        ; --- Anisotoropy ---
+        ani[jf] = a_nmr/ (2.0 * a_dnm)
+
+        ; --- Ac ---
+        ac[jf] = 1.0/ (we/ omg[jf] - 1.0)
+
+        ; --- Growth rate ---
+        gr[jf] = !pi * we * (1.0 - omg[jf]/ we)^2 * eta[jf]  $
+                 * (ani[jf] - ac[jf])
+
+     ENDFOR
+stop
+
+     RETURN, [ [omg[*]], [ani[*]], [ac[*]], [gr[*]] ]
+
+
+
+END

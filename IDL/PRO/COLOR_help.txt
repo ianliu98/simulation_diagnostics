@@ -1,0 +1,33 @@
+
+                    --- How to modify an own color table ---
+           also see 'modifyct' in IDL reference guide
+
+
+   1. Make a color table
+      > xpalette
+
+   2. Store an information of modified color table in system memory
+      > common colors, r, g, b, rc, gc, bc
+
+   3. Add a new color table
+      > modifyct, num, 'file name of individual color table', r, g, b, file='myloadct.tbl'
+
+      num: color table number (0 - 41: already defined)
+
+      file: Set this keyword to the name of a colortable file 
+            to be modified instead of the file colors1.tbl.
+   
+
+###
+     file='./PRO/myloadct.tbl'
+
+     0: BLUE-RED0        Jan 10, 2013
+                white(1)-BLUEW-WHITE-RED
+     1: BLUE-RED1        Jan 10, 2013
+                white(1)-BLUE-WHITE(wide)-RED
+     2: Rainbow2+white   Jan 29, 2013
+                White-Rainbow(39)-Black-White1
+                make: left stretch 15 and white position 50
+                      right stretch 90 and white position 229
+
+

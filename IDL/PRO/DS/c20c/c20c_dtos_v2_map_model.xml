@@ -1,0 +1,222 @@
+;+
+; NAME:
+;    c20c_dtos_v2_map_model.xml
+;
+; PURPOSE:
+;    This library contains lists of models contributed to the C20C+ Detection 
+;    and Attribution project as well as various properties of those models.
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    ---
+;
+; PROCEDURE:
+;    <model>:  Starts a new entry for a model (or other data source).
+;    <attribute_model_id>:  Starts a subentry for the model_id attribute value.
+;    <attribute_acknowledgement>:  Starts a subentry for the the 
+;        acknowledgement attribute value.
+;    <attribute_contact>:  Starts a subentry for the contact attribute value.
+;    <attribute_institute_id>:  Starts a subentry for the institute_id 
+;        attribute value.
+;    <attribute_model_name>:  Starts a subentry for the model_name attribute 
+;        value.
+;    <file_sftlf>:  Starts a subentry for defining the sftlf (land area 
+;        fraction) file name for use in providing the target grid for 
+;        interpolation and in providing the ocean-land mask.
+;
+; EXAMPLE:
+;    ---
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2017-12-23
+;    Modified:  DAS, 2018-05-06 (Added file_sftlf entry for NOAA-OI-v2)
+;    Modified:  DAS, 2018-09-07 (Changed default sftlf file directory for 
+;        NOAA-OI-v2)
+;-
+
+;***********************************************************************
+; List the models and their properties
+
+; CAM4-2degree
+<model>
+  <attribute_model_id>
+    CAM4-2degree
+  </attribute_model_id>
+  <attribute_model_name>
+    CAM4-2degree
+  </attribute_model_name>
+  <attribute_institute_id>
+    ETH
+  </attribute_institute_id>
+  <attribute_contact>
+    Urs Beyerle <urs.beyerle@env.ethz.ch
+  </attribute_contact>
+  <file_sftlf>
+    sftlf_fx_CAM4-2degree_All-Hist_est1_v1-0_run000_000000-000000.nc
+  </file_sftlf>
+</model>
+
+; CAM5.1-0.25degree
+<model>
+  <attribute_model_id>
+    CAM5-1-025degree
+  </attribute_model_id>
+  <attribute_model_name>
+    CAM5.1-0.25degree
+  </attribute_model_name>
+  <attribute_institute_id>
+    LBNL
+  </attribute_institute_id>
+  <attribute_contact>
+    dastone@runbox.com
+  </attribute_contact>
+  <attribute_acknowledgement>
+    This simulation was performed under the CASCADE Science Focus Area funded by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research\'s Regional and Global Climate Modeling Program under contract number DE-AC02-05CH11231. It was performed on hopper.nersc.gov at the National Energy Research Supercomputer Center (NERSC), also supported by the Office of Science of the U.S. Department of Energy, under Contract No. DE-AC02-05CH11231.
+  </attribute_acknowledgement>
+  <file_sftlf>
+    sftlf_fx_CAM5-1-025degree_All-Hist_est1_v1-0_run000_000000-000000.nc
+  </file_sftlf>
+</model>
+
+; CAM5.1-1degree
+<model>
+  <attribute_model_id>
+    CAM5-1-1degree
+  </attribute_model_id>
+  <attribute_model_name>
+    CAM5.1-1degree
+  </attribute_model_name>
+  <attribute_institute_id>
+    LBNL
+  </attribute_institute_id>
+  <attribute_contact>
+    dastone@runbox.com
+  </attribute_contact>
+  <attribute_acknowledgement>
+    This simulation was performed under the CASCADE Science Focus Area funded by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research\'s Regional and Global Climate Modeling Program under contract number DE-AC02-05CH11231. It was performed on hopper.nersc.gov at the National Energy Research Supercomputer Center (NERSC), also supported by the Office of Science of the U.S. Department of Energy, under Contract No. DE-AC02-05CH11231.
+  </attribute_acknowledgement>
+  <file_sftlf>
+    sftlf_fx_CAM5-1-1degree_All-Hist_est1_v2-0_run000_000000-000000.nc
+  </file_sftlf>
+</model>
+
+; CAM5.1-2degree
+<model>
+  <attribute_model_id>
+    CAM5-1-2degree
+  </attribute_model_id>
+  <attribute_model_name>
+    CAM5.1-2degree
+  </attribute_model_name>
+  <attribute_institute_id>
+    LBNL
+  </attribute_institute_id>
+  <attribute_contact>
+    dastone@runbox.com
+  </attribute_contact>
+  <attribute_acknowledgement>
+    This simulation was performed under the CASCADE Science Focus Area funded by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research\'s Regional and Global Climate Modeling Program under contract number DE-AC02-05CH11231. It was performed on hopper.nersc.gov at the National Energy Research Supercomputer Center (NERSC), also supported by the Office of Science of the U.S. Department of Energy, under Contract No. DE-AC02-05CH11231.
+  </attribute_acknowledgement>
+  <file_sftlf>
+    sftlf_fx_CAM5-1-2degree_All-Hist_est1_v1-1_run000_000000-000000.nc
+  </file_sftlf>
+</model>
+
+; CAM5.3-0.25degree
+<model>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_model_name>
+    CAM5.3-0.25degree
+  </attribute_model_name>
+  <attribute_institute_id>
+    LBNL
+  </attribute_institute_id>
+  <attribute_contact>
+    dastone@runbox.com
+  </attribute_contact>
+  <attribute_acknowledgement>
+    This simulation was performed under the CASCADE Science Focus Area funded by the U.S. Department of Energy, Office of Science, Office of Biological and Environmental Research\'s Regional and Global Climate Modeling Program under contract number DE-AC02-05CH11231. It was performed on hopper.nersc.gov at the National Energy Research Supercomputer Center (NERSC), also supported by the Office of Science of the U.S. Department of Energy, under Contract No. DE-AC02-05CH11231.
+  </attribute_acknowledgement>
+  <file_sftlf>
+    sftlf_fx_CAM5-1-2-025degree_All-Hist_est1_v1-0_run000_000000-000000.nc
+  </file_sftlf>
+</model>
+
+; HadISST1
+<model>
+  <attribute_model_id>
+    HadISST1
+  </attribute_model_id>
+  <attribute_model_name>
+    HadISST1
+  </attribute_model_name>
+  <attribute_institute_id>
+    MOHC
+  </attribute_institute_id>
+  <attribute_acknowledgement>
+    Gridded observational data courtesy of the Met Office Hadley Centre, U.K.
+  </attribute_acknowledgement>
+  <tossic_source>
+    HadISST1
+  </tossic_source>
+</model>
+
+; input4MIPs-NOAA-OI-v2
+<model>
+  <attribute_model_id>
+    input4MIPs-NOAA-OI-v2
+  </attribute_model_id>
+  <attribute_model_name>
+    input4MIPs updated with NOAA OI.v2
+  </attribute_model_name>
+  <attribute_institute_id>
+    PCMDI-and-NOAA-EMC
+  </attribute_institute_id>
+  <attribute_acknowledgement>
+    Some data obtained from input4MIPs (http://www-pcmdi.llnl.gov/projects/amip/AMIP2EXPDSN/BCS/amip2bcs.php).  NOAA OI.v2:  Gridded observational data courtesy of the Global Climate and Weather Modeling Branch, National Centers for Environmental Protection, U.S.A.
+  </attribute_acknowledgement>
+  <attribute_license>
+    From input4MIPs:  AMIP boundary condition data produced by PCMDI is licensed under a Creative Commons Attribution \Share Alike\ 4.0 International License (http://creativecommons.org/licenses/by/4.0/). The data producers and data providers make no warranty, either express or implied, including but not limited to, warranties of merchantability and fitness for a particular purpose. All liabilities arising from the supply of the information (including any liability arising in negligence) are excluded to the fullest extent permitted by law.
+  </attribute_license>
+  <tossic_source>
+    input4MIPs-NOAA-OI-v2
+  </tossic_source>
+</model>
+
+; NOAA-OI-v2
+<model>
+  <attribute_model_id>
+    NOAA-OI-v2
+  </attribute_model_id>
+  <attribute_model_name>
+    NOAA OI.v2 with Hurrell et alii (2008) before 1981/11
+  </attribute_model_name>
+  <attribute_institute_id>
+    NOAA-EMC-and-NCAR
+  </attribute_institute_id>
+  <attribute_acknowledgement>
+    Gridded observational data courtesy of the National Center for Atmospheric Research, U.S.A. and the Global Climate and Weather Modeling Branch, National Centers for Environmental Protection, U.S.A.
+  </attribute_acknowledgement>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <file_sftlf>
+    /project/projectdirs/m1517/daithi/NOAA-EMC-and-NCAR/NOAA-OI-v2/All-Hist/est1/v1-0/fx/atmos/sftlf/mask/sftlf_fx_NOAA-OI-v2_All-Hist_est1_v1-0_mask_000000-000000.nc
+  </file_sftlf>
+</model>

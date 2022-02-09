@@ -1,0 +1,117 @@
+
+; INPUT:
+;     f(Vpara, Vperp)
+;     Vpara: -kcv to +cv
+;     Vperp: 0 to +cv
+
+
+FUNCTION growthrate, dis, we, kmp
+
+     ; model distribution for check
+     check = 1
+     if (check eq 1) then begin
+        print, 'model distribution is used'
+        uth_pa = 0.3
+        uth_pe = 0.3
+        for jpa=0, 201-1 do begin
+           for jpe=0, 101-1 do begin
+              upa = jpa/100.0 - 1.0
+              upe = jpe/100.0
+              dis[jpa, jpe] = 1.0/ ( (2.0*!pi)^1.5 * uth_pa * uth_pe^2)  $
+                              * Exp(-upa^2/(2.0*uth_pa^2)) * Exp(-upe^2/(2.0*uth_pe^2))
+           endfor
+        endfor
+     endif
+
+
+     print, 'Neglecting "relativity" and "displacement current"'
+             print, '   and assume "Maxwellian"'
+
+     dv=1.0
+     dw=0.01
+
+     pa_ax   = ( Findgen(2*kmp.cv/dv + 1) - kmp.cv/dv ) * dv
+     pe_ax   = Findgen(kmp.cv/dv +1) * dv
+
+     dv2 = 1./ (2.*dv)
+     nf = Fix(we/ dw)
+     omg = Findgen(nf) * dw + dw
+     ani  = Fltarr(nf)
+     ac = ani[*]
+     gr = ani[*] 
+     eta = ani[*]
+
+     ; Vr
+     in = {we:we, omg:omg, vpa:0.0, vpe:0.0}     ; non relativistic
+     out = PLASMA_PRM( 43, kmp, in=in )
+
+  ani        = fltarr( nf)
+  ac       = fltarr(nf)
+  gr    = fltarr( nf)
+  eta      = fltarr(nf)
+
+vr = out.vr
+
+ jvpa = fix((vr + kmp.cv) /dv)
+
+
+pa_ax = pa_ax/100.0
+pe_ax = pe_ax/100.0
+dv = dv/100.0
+
+    ; --- anisotropy ---
+    for  jf = 0, nf-1  do begin
+
+      ijvpa =  jvpa(jf)
+      if ((ijvpa ge 1) and (ijvpa le (102 - 2))) then begin
+        ; --- interpolating ---
+        l1 = vr(jf) - pa_ax(ijvpa)
+        l2 = pa_ax(ijvpa+1) - vr(jf)
+        l12 = l1 + l2
+
+        vdis_i = (dis(ijvpa, *)*l2 + dis(ijvpa+1, *)*l1) / l12
+        vdis_i1 = (dis(ijvpa-1, *)*l2 + dis(ijvpa, *)*l1) / l12
+        vdis_i2 = (dis(ijvpa+1, *)*l2 + dis(ijvpa+2, *)*l1) / l12
+
+        bunsi = 0.
+        bunbo = 0.
+        eta_sekibun = 0.
+
+        for  jvpe = 1, 99  do begin
+          bunsi = pe_ax(jvpe) * $
+                    (vr(jf) * (vdis_i(jvpe+1) - vdis_i(jvpe-1)) $
+                    /(2.0*dv) - pe_ax(jvpe) * (vdis_i2(jvpe) $
+                    - vdis_i1(jvpe)) /(2.0*dv)) * pe_ax(jvpe)/vr(jf)$
+                    + bunsi
+
+          bunbo = pe_ax(jvpe) * vdis_i(jvpe) $
+                    + bunbo
+
+          eta_sekibun = pe_ax(jvpe) * vdis_i(jvpe) * dv $
+                        + eta_sekibun
+        endfor
+
+        ; /////   eta   /////
+        eta(jf) = 2.*!pi * (-vr(jf)) * eta_sekibun
+
+        ; /////   A   /////
+        bunbo2 = 2.*bunbo
+        ani(jf) = bunsi / bunbo2
+
+        ; /////   Ac   /////
+        ac(jf) = 1./(we/omg(jf) - 1)
+
+        ; /////   gamma   /////
+        gr(jf) = we*!pi * (1 - omg(jf)/we)^2 * $
+                      eta(jf) * (ani(jf) - ac(jf))
+endif
+
+     ENDFOR
+
+stop
+
+     RETURN, [ [omg[*]], [ani[*]], [ac[*]], [gr[*]] ]
+
+
+
+END

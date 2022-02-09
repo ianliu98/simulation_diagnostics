@@ -1,0 +1,80 @@
+;+
+; NAME:
+;    c20c_dtos_v2_make_delta_driver_scripts.txt
+;
+; PURPOSE:
+;    This file contains scripts for generating C20C+ D&A deltaSST attributable 
+;    warming estimates using the c20c_dtos_v2_make_delta_* collection of 
+;    routines.
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    c20c_dtos_v2_make_delta_driver.pro
+;
+; PROCEDURE:
+;    These scripts implement calls to c20c_dtos_v2_make_delta_driver.pro.
+;
+; EXAMPLES:
+;    ; See scripts below.
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2018-12-12
+;-
+
+;***********************************************************************
+; C20C+ D&A Nat-Hist/CMIP5-est1/v1-0 benchmark deltaSST estimate on NERSC's 
+; Cori system
+
+; The following script generates the C20C+ D&A Nat-Hist/CMIP5-est1/v1-0 
+; benchmark deltaSST estimate on NERSC's Cori system.
+
+; Define directory containing all input subdirectories
+dir_m1517 = '/project/projectdirs/m1517/'
+
+; Generate estimate for 1990/01 through 2019/12
+c20c_dtos_v2_make_delta_driver, 'Nat-Hist/CMIP5-est1/v1-0', time_filter=['boxcar','10'], in_dir=dir_m1517+'daithi/data/CMIP5/*/'+['historical','rcp45','historicalNat']+'/est1/v1-0/mon/atmos/ts/r*', indep_period=['199001','201912'], contact='Daithi Stone (dastone@runbox.com)', institute_id='C20C', grid_file=dir_m1517+'daithi/data/NOAA-EMC-and-NCAR/NOAA-OI-v2/All-Hist/est1/v1-0/mon/ocean/tos/observed/oiv2mon.201101_tos.nc', out_period=['199001','201912'], options=['extend last year']
+
+;***********************************************************************
+; C20C+ D&A Nat-Hist/CCSM4-est1/v1-0 deltaSST estimate on NERSC's Cori system
+
+; The following script generates the C20C+ D&A Nat-Hist/CCSM4-est1/v1-0 
+; deltaSST estimate on NERSC's Cori system.
+
+; Define directory containing all input subdirectories
+dir_m1517 = '/project/projectdirs/m1517/'
+
+; Generate estimate for 1990/01 through 2019/12
+c20c_dtos_v2_make_delta_driver, 'Nat-Hist/CCSM4-est1/v1-0', time_filter=['boxcar','10'], in_dir=dir_m1517+'daithi/data/CMIP5/CCSM4/'+['historical','rcp45','historicalNat']+'/est1/v1-0/mon/atmos/ts/r*', indep_period=['199001','201912'], contact='Daithi Stone (dastone@runbox.com)', institute_id='C20C', grid_file=dir_m1517+'daithi/data/NOAA-EMC-and-NCAR/NOAA-OI-v2/All-Hist/est1/v1-0/mon/ocean/tos/observed/oiv2mon.201101_tos.nc', out_period=['199001','201912'], options=['extend last year']
+
+;***********************************************************************
+; C20C+ D&A Nat-Hist/CESM1-CAM5-est1/v1-0 deltaSST estimate on NERSC's Cori 
+; system
+
+; The following script generates the C20C+ D&A Nat-Hist/CESM1-CAM5-est1/v1-0 
+; deltaSST estimate on NERSC's Cori system.
+
+; Define directory containing all input subdirectories
+dir_m1517 = '/project/projectdirs/m1517/'
+
+; Generate estimate for 1950/01 through 1989/12
+c20c_dtos_v2_make_delta_driver, 'Nat-Hist/CESM1-CAM5-est1/v1-0', time_filter=['boxcar','10'], in_dir=dir_m1517+'daithi/data/CMIP5/CESM1-CAM5/'+['historical','rcp45','historicalNat']+'/est1/v1-0/mon/atmos/ts/r*', indep_period=['195001','198912'], contact='Daithi Stone (dastone@runbox.com)', institute_id='C20C', grid_file=dir_m1517+'daithi/data/NOAA-EMC-and-NCAR/NOAA-OI-v2/All-Hist/est1/v1-0/mon/ocean/tos/observed/oiv2mon.201101_tos.nc', out_period=['195001','198912'], options=['extend last year']
+
+; Generate estimate for 1990/01 through 2019/12
+c20c_dtos_v2_make_delta_driver, 'Nat-Hist/CESM1-CAM5-est1/v1-0', time_filter=['boxcar','10'], in_dir=dir_m1517+'daithi/data/CMIP5/CESM1-CAM5/'+['historical','rcp45','historicalNat']+'/est1/v1-0/mon/atmos/ts/r*', indep_period=['199001','201912'], contact='Daithi Stone (dastone@runbox.com)', institute_id='C20C', grid_file=dir_m1517+'daithi/data/NOAA-EMC-and-NCAR/NOAA-OI-v2/All-Hist/est1/v1-0/mon/ocean/tos/observed/oiv2mon.201101_tos.nc', out_period=['199001','201912'], options=['extend last year']
+
+;***********************************************************************
+; The end

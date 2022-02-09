@@ -1,0 +1,120 @@
+;+
+; NAME:
+;    c20c_dtos_v2_make_tossic_driver_scripts.txt
+;
+; PURPOSE:
+;    This file contains scripts for generating sea surface temperature and sea 
+;    ice concentration files for use in the C20C+ D&A project. 
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    c20c_dtos_v2_make_tossic_driver.pro
+;
+; PROCEDURE:
+;    These scripts implement calls to c20c_dtos_v2_make_tossic_driver.pro.
+;
+; EXAMPLES:
+;    ; See scripts below.
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2018-11-29
+;    Modified:  DAS, 2018-12-12 (Added documentation)
+;-
+
+;***********************************************************************
+; Script for producing C20C+ D&A's All-Hist/est1/v1-0 for LBNL/CAM5.1-1degree
+
+; Define the output file for 2014/12-2016/01
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_All-Hist_est1_v2-0_period201412-201601_201412-201601.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+
+;***********************************************************************
+; Script for producing C20C+ D&A's Nat-Hist/CMIP5-est1/v1-0 for 
+; LBNL/CAM5.1-1degree
+
+; Define the output file for 2014/12-2016/01
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CMIP5-est1_v2-0_period201412-201601_201412-201601.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+
+;***********************************************************************
+; Script for producing C20C+ D&A's Nat-Hist/CESM1-CAM5-est1/v1-0 for 
+; LBNL/CAM5.1-1degree
+
+; Define the output file for 1951/01-1960/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period195101-196012_195101-196012.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 1961/01-1970/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period196101-197012_196101-197012.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 1971/01-1980/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period197101-198012_197101-198012.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 1981/01-1990/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period198101-199012_198101-199012.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 1991/01-2000/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period199101-200012_199101-200012.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 2001/01-2010/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period200101-201012_200101-201012.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 2011/01-2017/12
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period201101-201712_201101-201712.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+; Define the output file for 2018/01-2018/06
+out_file = 'tosbcs-sicbcs_Omon_CAM5-1-1degree_Nat-Hist_CESM1-CAM5-est1_v1-0_period201801-201806_201801-201806.nc'
+; Generate the sic, sicbcs, tos, and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, out_file, nersc=1, ready_to_use=1
+
+
+;***********************************************************************
+; Script for producing HAPPI's Plus30-Future/CMIP5-MMM-est1/v1-0-sic-Plus20 for
+; LBNL/CAM5.1.2-0.25degree
+
+; Generate the tos and tosbcs fields
+c20c_dtos_v2_make_tossic_driver, 'tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_200501-201604.nc', delta_file='/global/cscratch1/sd/stoned/processing/CAM5-05/HAPPI_30K_dSST_MMM_allmem_rcp45_rcp85_209101_210012_vs_rcp85_200601_201512_1DEG.nc', delta_period=['210001','210012'], nersc=1, ready_to_use=1, delta_extend_cycle=1
+; Add the Plus20-Future sic and sicbcs fields and the time, date, and datesec 
+; dimension variables
+ln -sn $M1517/C20C/LBNL/CAM5-1-2-025degree/Plus20-Future/CMIP5-MMM-est1/v1-0/mon/ocean/tos-sic/period210501-211604/tos-sic_Omon_CAM5-1-2-025degree_Plus20-Future_CMIP5-MMM-est1_v1-0_run000_210501-211604.nc
+mv tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_200501-201604.nc sic-sicbcs-tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_210501-211604.nc
+ncks -A -v ice_cov tos-sic_Omon_CAM5-1-2-025degree_Plus20-Future_CMIP5-MMM-est1_v1-0_run000_210501-211604.nc sic-sicbcs-tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_210501-211604.nc
+ncks -A -v ice_cov_prediddle tos-sic_Omon_CAM5-1-2-025degree_Plus20-Future_CMIP5-MMM-est1_v1-0_run000_210501-211604.nc sic-sicbcs-tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_210501-211604.nc
+ncks -A -v time tos-sic_Omon_CAM5-1-2-025degree_Plus20-Future_CMIP5-MMM-est1_v1-0_run000_210501-211604.nc sic-sicbcs-tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_210501-211604.nc
+ncks -A -v date tos-sic_Omon_CAM5-1-2-025degree_Plus20-Future_CMIP5-MMM-est1_v1-0_run000_210501-211604.nc sic-sicbcs-tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_210501-211604.nc
+ncks -A -v datesec tos-sic_Omon_CAM5-1-2-025degree_Plus20-Future_CMIP5-MMM-est1_v1-0_run000_210501-211604.nc sic-sicbcs-tos-tosbcs_Omon_CAM5-1-2-025degree_Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20_run000_210501-211604.nc
+
+
+;***********************************************************************
+; The End

@@ -1,0 +1,384 @@
+;+
+; NAME:
+;    c20c_dtos_v2_map_scenario.xml
+;
+; PURPOSE:
+;    This library contains lists of scenarios contributed to the C20C+ 
+;    and Attribution project from various models.
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    ---
+;
+; PROCEDURE:
+;    <scenario>:  Starts a new entry for a model/experiment_family/experiment/ 
+;        subexperiment combination.
+;    <attribute_model_id>:  Starts a subentry for the model_id attribute value.
+;    <attribute_experiment_family_experiment_subexperiment>:  Starts a subentry 
+;        for the experiment_family/experiment/subexperiment combined attribute 
+;        values (separated by "_").
+;    <attribute_title>:  Starts a subentry for the title attribute value.
+;    <tossic_source>:  Starts a subentry for the label ("model_id") of the 
+;        original observational source data.
+;
+; EXAMPLE:
+;    ---
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2017-12-23
+;    Modified:  DAS, 2018-03-02 (Added NOAA-OI-v2/Nat-Hist/CMIP5-est1/v1-0 entry)
+;    Modified:  DAS, 2018-11-14 (Added CAM5-1-2-025degree/Plus30-Future/CMIP5-MMM-est1/v1-0-sic-Plus20 entry)
+;-
+
+;***********************************************************************
+
+; CAM4-2degree/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM4-2degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM4-2degree/All-Hist/est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM4-2degree/Nat-Hist/CMIP5-est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM4-2degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Nat-Hist_CMIP5-est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Nat-Hist/CMIP5-est1 attributable ocean warming estimate.  Intended for the CAM4-2degree/Nat-Hist/CMIP5-est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM4-2degree/Plus15-Future/CMIP5-MMM-est1/v2-0
+<scenario>
+  <attribute_model_id>
+    CAM4-2degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Plus15-Future_CMIP5-MMM-est1_v2-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the HAPPI project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Plus15-Future/CMIP5-MMM-est1 ocean warming estimate.  Intended for the CAM4-2degree/Plus15-Future/CMIP5-MMM-est1/v2-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM4-2degree/Plus20-Future/CMIP5-MMM-est1/v2-0
+<scenario>
+  <attribute_model_id>
+    CAM4-2degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Plus20-Future_CMIP5-MMM-est1_v2-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the HAPPI project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Plus20-Future/CMIP5-MMM-est1 ocean warming estimate.  Intended for the CAM4-2degree/Plus20-Future/CMIP5-MMM-est1/v2-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-025degree/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM5-1-025degree/All-Hist/est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-025degree/PlusRCP85/MRI-est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    PlusRCP85_MRI-est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the PlusRCP85/MRI-est1 ocean warming estimate.  Intended for the CAM5-1-025degree/PlusRCP85/MRI-est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-1degree/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-1degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM5-1-1degree/All-Hist/est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-1degree/All-Hist/est1/v2-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-1degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v2-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM5-1-1degree/All-Hist/est1/v2-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-1degree/Nat-Hist/CMIP5-est1/v2-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-1degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Nat-Hist_CMIP5-est1_v2-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Nat-Hist/CMIP5-est1 attributable ocean warming estimate.  Intended for the CAM5-1-1degree/Nat-Hist/CMIP5-est1/v2-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2degree/All-Hist/est1/v1-1
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-1
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM5-1-2degree/All-Hist/est1/v1-1 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2degree/NonGHG-Hist/HadCM3-p50-est1/v1-1
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    NonGHG-Hist_HadCM3-p50-est1_v1-1
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the NonGHG-Hist/HadCM3-p50-est1 attributable ocean warming estimate.  Intended for the CAM5-1-2degree/NonGHG-Hist/HadCM3-p50-est1/v1-1 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2-025degree/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM5-1-2-025degree/All-Hist/est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2-025degree/All-Hist/est1/v1-0-aero
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0-aero
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products.  Intended for the CAM5-1-2-025degree/All-Hist/est1/v1-0-aero simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2-025degree/Nat-Hist/CMIP5-est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Nat-Hist_CMIP5-est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Nat-Hist/CMIP5-est1 attributable ocean warming estimate.  Intended for the CAM5-1-2-025degree/Nat-Hist/CMIP5-est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2-025degree/Plus15-Future/CMIP5-MMM-est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Plus15-Future_CMIP5-MMM-est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the HAPPI project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Plus15-Future/CMIP5-MMM-est1 ocean warming estimate.  Intended for the CAM5-1-2-025degree/Plus15-Future/CMIP5-MMM-est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2-025degree/Plus20-Future/CMIP5-MMM-est1/v1-0
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Plus20-Future_CMIP5-MMM-est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the HAPPI project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Plus20-Future/CMIP5-MMM-est1 ocean warming estimate.  Intended for the CAM5-1-2-025degree/Plus20-Future/CMIP5-MMM-est1/v1-0 simulations.
+  </attribute_title>
+</scenario>
+
+; CAM5-1-2-025degree/Plus30-Future/CMIP5-MMM-est1/v1-0-sic-Plus20
+<scenario>
+  <attribute_model_id>
+    CAM5-1-2-025degree
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Plus30-Future_CMIP5-MMM-est1_v1-0-sic-Plus20
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the HAPPI project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Plus30-Future/CMIP5-MMM-est1 ocean warming estimate but with sea ice unchanged from the Plus20-Future/CMIP5-MMM-est1/v1-0 estimate.  Intended for the LBNL/CAM5-1-2-025degree/Plus30-Future/CMIP5-MMM-est1/v1-0-sic-Plus20 simulations.
+  </attribute_title>
+</scenario>
+
+; HadISST1/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    HadISST1
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    HadISST1
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction from the HadISST1 product.
+  </attribute_title>
+</scenario>
+
+; input4MIPs-NOAA-OI-v2/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    input4MIPs-NOAA-OI-v2
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    input4MIPs-NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction from the input4MIPs and NOAA OI.v2 products.
+  </attribute_title>
+</scenario>
+
+; NOAA-OI-v2/All-Hist/est1/v1-0
+<scenario>
+  <attribute_model_id>
+    NOAA-OI-v2
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    All-Hist_est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction from the Hurrell et alii (2008) and NOAA OI.v2 products.
+  </attribute_title>
+</scenario>
+
+; NOAA-OI-v2/Nat-Hist/CMIP5-est1/v1-0
+<scenario>
+  <attribute_model_id>
+    NOAA-OI-v2
+  </attribute_model_id>
+  <attribute_experiment_family_experiment_subexperiment>
+    Nat-Hist_CMIP5-est1_v1-0
+  </attribute_experiment_family_experiment_subexperiment>
+  <tossic_source>
+    NOAA-OI-v2
+  </tossic_source>
+  <attribute_title>
+    Sea surface temperatures and sea ice fraction for the C20C+ D\&A Project based on the Hurrell et alii (2008) and NOAA OI.v2 products and the Nat-Hist/CMIP5-est1 attributable ocean warming estimate.
+  </attribute_title>
+</scenario>
+

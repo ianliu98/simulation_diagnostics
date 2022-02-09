@@ -1,0 +1,174 @@
+;+
+; NAME:
+;    c20c_dtos_v2_map_institute.xml
+;
+; PURPOSE:
+;    This library contains lists of institutions contributing to the C20C+ 
+;    Detection and Attribution project as well as various properties of those 
+;    institutions.
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    ---
+;
+; PROCEDURE:
+;    <institution>:  Starts a new entry for an institution.
+;    <attribute_institute_id>:  Starts a subentry for the institute_id 
+;        attribute value.
+;    <attribute_institution>:  Starts a subentry for the institution attribute 
+;        value.
+;
+; EXAMPLE:
+;    ---
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2017-12-23
+;    Modified:  DAS, 2018-03-02 (Removed usage of quotation marks in entries)
+;-
+
+;***********************************************************************
+
+; ARCCSS
+<institution>
+  <attribute_institute_id>
+    ARCCSS
+  </attribute_institute_id>
+  <attribute_institution>
+    ARC Centre of Excellence for Climate System Science, Australia
+  </attribute_institution>
+</institution>
+
+; C20C
+<institution>
+  <attribute_institute_id>
+    C20C
+  </attribute_institute_id>
+  <attribute_institution>
+    The Climate of the 20th Century Plus Detection and Attribution Project
+  </attribute_institution>
+</institution>
+
+; CCCma
+<institution>
+  <attribute_institute_id>
+    CCCma
+  </attribute_institute_id>
+  <attribute_institution>
+    CCCma (Canadian Centre for Climate Modelling and Analysis, Victoria, BC, Canada)
+  </attribute_institution>
+</institution>
+
+; ETH
+<institution>
+  <attribute_institute_id>
+    ETH
+  </attribute_institute_id>
+  <attribute_institution>
+    ETH, Zurich, Switzerland
+  </attribute_institution>
+</institution>
+
+; LBNL
+<institution>
+  <attribute_institute_id>
+    LBNL
+  </attribute_institute_id>
+  <attribute_institution>
+    Lawrence Berkeley National Laboratory, Berkeley, CA, USA
+  </attribute_institution>
+</institution>
+
+; MIROC
+<institution>
+  <attribute_institute_id>
+    MIROC
+  </attribute_institute_id>
+  <attribute_institution>
+    AORI (Atmosphere and Ocean Research Institute, The University of Tokyo, Chiba, Japan), NIES (National Institute for Environmental Studies, Ibaraki, Japan), JAMSTEC (Japan Agency for Marine-Earth Science and Technology, Kanagawa, Japan)
+  </attribute_institution>
+</institution>
+
+; MOHC
+<institution>
+  <attribute_institute_id>
+    MOHC
+  </attribute_institute_id>
+  <attribute_institution>
+    Met Office Hadley Centre, Fitzroy Road, Exeter, Devon, EX1 3PB, UK, (http://www.metoffice.gov.uk)
+  </attribute_institution>
+</institution>
+
+; NCC
+<institution>
+  <attribute_institute_id>
+    NCC
+  </attribute_institute_id>
+  <attribute_institution>
+    NorESM Climate modeling Consortium
+  </attribute_institution>
+</institution>
+
+; NOAA-EMC-and-NCAR
+<institution>
+  <attribute_institute_id>
+    NOAA-EMC-and-NCAR
+  </attribute_institute_id>
+  <attribute_institution>
+    NOAA Environmental Modeling Center and National Center for Atmospheric Research
+  </attribute_institution>
+</institution>
+
+; NOAA-ESRLandCIRES
+<institution>
+  <attribute_institute_id>
+    NOAA-ESRLandCIRES
+  </attribute_institute_id>
+  <attribute_institution>
+    NOAA/ESRL Physical Sciences Division & CU/CIRES (325 Broadway R/PSD1, Boulder, CO 80305)
+  </attribute_institution>
+</institution>
+
+; PCMDI-and-NOAA-EMC
+<institution>
+  <attribute_institute_id>
+    PCMDI-and-NOAA-EMC
+  </attribute_institute_id>
+  <attribute_institution>
+    Program for Climate Model Diagnosis and Intercomparison (LLNL), Livermore, CA, USA, and NOAA Environmental Modeling Center
+  </attribute_institution>
+</institution>
+
+; POSTECH
+<institution>
+  <attribute_institute_id>
+    POSTECH
+  </attribute_institute_id>
+  <attribute_institution>
+    Pohang University of Science and Technology, Pohang, South Korea
+  </attribute_institution>
+</institution>
+
+; UCT-CSAG
+<institution>
+  <attribute_institute_id>
+    UCT-CSAG
+  </attribute_institute_id>
+  <attribute_institution>
+    Climate Systems Analysis Group, University of Cape Town, Rondebosch, South Africa
+  </attribute_institution>
+</institution>
+

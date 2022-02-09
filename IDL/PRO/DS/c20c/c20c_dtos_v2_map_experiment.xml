@@ -1,0 +1,166 @@
+;+
+; NAME:
+;    c20c_dtos_v2_map_experiment.xml
+;
+; PURPOSE:
+;    This library contains lists of details concerning the various experiments 
+;    performed under the C20C+ Detection and Attribution project.
+;
+; CATEGORY:
+;    C20C dtos v2
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    ---
+;
+; PROCEDURE:
+;    <experiment>:  Starts a new entry for an experiment_family/experiment.
+;    <attribute_experiment_family_experiment>:  Starts a subentry for an 
+;        experiment_family/experiment combination.
+:    <attribute_acknowledgement>:  Starts a subentry for an acknowledgement 
+;        attribute value.
+;    <attribute_comment>:  Starts a subentry for a comment attribute value.
+;    <delta_factor>:  Starts a subentry for a delta-multiplication-factor 
+;        value.  Factors for different delta patterns should be separated by a 
+;        "&" character, and the number of such patterns must equal the number 
+;        in the "<delta_file>" entry.
+;    <delta_file>:  Starts a subentry for a deltaSST file value(s).  Multiple 
+;        files defining a single pattern should be a separated by commas, while 
+;        the "&" character should be used to separate file lists for further 
+;        patterns.
+;    <delta_var_label>:  Starts a subentry for the variable name to read from 
+;        the deltaSST file.  Entries for different delta patterns should be 
+;        separated by a "&" character, and the number of such patterns must 
+;        equal the number in the "<delta_file>" entry.
+;    <tossic_fit_method>:  Starts a subentry listing aspects of the method 
+;        used to determine the SST-sea ice fit for use in the sea ice 
+;        adjustment algorithm.
+;    <tossic_fit_period>:  Starts a subentry listing the start and end of the 
+;        time period to use when calculating the SST-sea ice fit.
+;
+; EXAMPLE:
+;    ---
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2017-12-23
+;    Modified:  DAS, 2018-03-02 (Removed usage of quotation marks in entries)
+;    Modified:  DAS, 2018-11-08 (Added Plus30-Future/CMIP5-MMM-est1 experiment)
+;    Modified:  DAS, 2018-11-16 (Allowed multiple delta patterns to be defined 
+;        for a single experiment.  Added Nat-Hist/CESM1-CAM5-est1 experiment)
+;-
+
+;***********************************************************************
+; List the experiments and their properties
+
+; All-Hist/est1
+<experiment>
+  <attribute_experiment_family_experiment>
+    All-Hist_est1
+  </attribute_experiment_family_experiment>
+</experiment>
+
+; Nat-Hist/CMIP5-est1
+<experiment>
+  <attribute_experiment_family_experiment>
+    Nat-Hist_CMIP5-est1
+  </attribute_experiment_family_experiment>
+  <attribute_acknowledgement>
+    Attributable warming estimated using data from the CMIP5 project of the World Climate Research Programme\'s Working Group on Coupled Modelling with the participation of various modelling groups.
+  </attribute_acknowledgement>
+  <attribute_comment>
+    Attributable warming and sea ice coverage change estimated according to Stone and Pall (2017, A benchmark estimate of the effect of anthropogenic emissions on the ocean surface, submitted to Geoscientific Model Development).
+  </attribute_comment>
+  <delta_file>
+     tos_Omon_delta_Nat-Hist_CMIP5-est1_v1-0_period195001-201312_195001-201312.nc,tos_Omon_delta_Nat-Hist_CMIP5-est1_v1-0_period201401-201912_201401-201912.nc
+  </delta_file>
+  <delta_factor>
+    -1
+  </delta_factor>
+  <delta_var_label>
+    tos
+  </delta_var_label>
+  <tossic_fit_method>
+    stonepall2018,lon global,lat hemispheres,time annual,linear anchored
+  </tossic_fit_method>
+  <tossic_fit_period>
+    20010101,20101231
+  </tossic_fit_period>
+</experiment>
+
+; Nat-Hist/CESM1-CAM5-est1
+<experiment>
+  <attribute_experiment_family_experiment>
+    Nat-Hist_CESM1-CAM5-est1
+  </attribute_experiment_family_experiment>
+  <attribute_acknowledgement>
+    Attributable warming estimated using data from the CESM1-CAM5 model submitted by NCAR to the CMIP5 project of the World Climate Research Programme\'s Working Group on Coupled Modelling.
+  </attribute_acknowledgement>
+  <attribute_comment>
+    Attributable warming and sea ice coverage change estimated according to Stone and Pall (2017, A benchmark estimate of the effect of anthropogenic emissions on the ocean surface, submitted to Geoscientific Model Development).
+  </attribute_comment>
+  <delta_file>
+     tos_Omon_delta_Nat-Hist_CESM1-CAM5-est1_v1-0_period195001-198912_195001-198912.nc,tos_Omon_delta_Nat-Hist_CESM1-CAM5-est1_v1-0_period199001-201912_199001-201912.nc
+  </delta_file>
+  <delta_factor>
+    -1
+  </delta_factor>
+  <delta_var_label>
+    tos
+  </delta_var_label>
+  <tossic_fit_method>
+    stonepall2018,lon global,lat hemispheres,time annual,linear anchored
+  </tossic_fit_method>
+  <tossic_fit_period>
+    20010101,20101231
+  </tossic_fit_period>
+</experiment>
+
+; Plus15-Future/CMIP5-MMM-est1
+<experiment>
+  <attribute_experiment_family_experiment>
+    Plus15-Future_CMIP5-MMM-est1
+  </attribute_experiment_family_experiment>
+  <attribute_acknowledgement>
+    Warming estimated using data from the CMIP5 project of the World Climate Research Programme\'s Working Group on Coupled Modelling with the participation of various modelling groups.
+  </attribute_acknowledgement>
+  <attribute_comment>
+    Warming and sea ice retreat estimated according to Mitchell et alii 2017 (Mitchell, D., K. AchutaRao, M. Allen, I. Bethke, U. Beyerle, A. Ciavarella, P. M. Forster, J. Fuglestvedt, N. Gillett, K. Haustein, W. Ingram, T. Iverson, V. Kharin, N. Klingaman, N. Massey, E. Fischer, C.-F. Schleussner, J. Scinocca, \O. Seland, H. Shiogama, E. Shuckburgh, S. Sparrow, D. Stone, P. Uhe, D. Wallom, M. Wehner, and R. Zaaboul.  2017.  Half a degree additional warming, prognosis and projected impacts (HAPPI): background and experimental design.  Geoscientific Model Development, 10, 571-583, 10.5194/gmd-10-571-2017).
+  </attribute_comment>
+</experiment>
+
+; Plus20-Future/CMIP5-MMM-est1
+<experiment>
+  <attribute_experiment_family_experiment>
+    Plus20-Future_CMIP5-MMM-est1
+  </attribute_experiment_family_experiment>
+  <attribute_acknowledgement>
+    Warming estimated using data from the CMIP5 project of the World Climate Research Programme\'s Working Group on Coupled Modelling with the participation of various modelling groups.
+  </attribute_acknowledgement>
+  <attribute_comment>
+    Warming and sea ice retreat estimated according to Mitchell et alii 2017 (Mitchell, D., K. AchutaRao, M. Allen, I. Bethke, U. Beyerle, A. Ciavarella, P. M. Forster, J. Fuglestvedt, N. Gillett, K. Haustein, W. Ingram, T. Iverson, V. Kharin, N. Klingaman, N. Massey, E. Fischer, C.-F. Schleussner, J. Scinocca, \O. Seland, H. Shiogama, E. Shuckburgh, S. Sparrow, D. Stone, P. Uhe, D. Wallom, M. Wehner, and R. Zaaboul.  2017.  Half a degree additional warming, prognosis and projected impacts (HAPPI): background and experimental design.  Geoscientific Model Development, 10, 571-583, 10.5194/gmd-10-571-2017).
+  </attribute_comment>
+</experiment>
+
+; Plus30-Future/CMIP5-MMM-est1
+<experiment>
+  <attribute_experiment_family_experiment>
+    Plus30-Future_CMIP5-MMM-est1
+  </attribute_experiment_family_experiment>
+  <attribute_acknowledgement>
+    Warming estimated using data from the CMIP5 project of the World Climate Research Programme\'s Working Group on Coupled Modelling with the participation of various modelling groups.
+  </attribute_acknowledgement>
+  <attribute_comment>
+    Warming and sea ice retreat estimated according to Mitchell et alii 2017 (Mitchell, D., K. AchutaRao, M. Allen, I. Bethke, U. Beyerle, A. Ciavarella, P. M. Forster, J. Fuglestvedt, N. Gillett, K. Haustein, W. Ingram, T. Iverson, V. Kharin, N. Klingaman, N. Massey, E. Fischer, C.-F. Schleussner, J. Scinocca, \O. Seland, H. Shiogama, E. Shuckburgh, S. Sparrow, D. Stone, P. Uhe, D. Wallom, M. Wehner, and R. Zaaboul.  2017.  Half a degree additional warming, prognosis and projected impacts (HAPPI): background and experimental design.  Geoscientific Model Development, 10, 571-583, 10.5194/gmd-10-571-2017).
+  </attribute_comment>
+</experiment>

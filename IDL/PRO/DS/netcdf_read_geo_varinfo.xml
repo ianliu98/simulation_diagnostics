@@ -1,0 +1,914 @@
+;+
+; NAME:
+;    netcdf_read_geo_varinfo.xml
+;
+; PURPOSE:
+;    This library contains lists of alternate names and standard units for 
+;    various variables and dimensions.
+;
+; CATEGORY:
+;    Input/Output
+;
+; CALLING SEQUENCE:
+;    ---
+;
+; INPUTS:
+;    ---
+;
+; KEYWORD PARAMETERS:
+;    ---
+;
+; OUTPUTS:
+;    ---
+;
+; USES:
+;    ---
+;
+; PROCEDURE:
+;    ---
+;
+; EXAMPLE:
+;    ---
+;
+; MODIFICATION HISTORY:
+;    Written by:  Daithi Stone (dastone@runbox.com), 2017-10-09 (Extracting 
+;        from climate_fileread.pro).
+;    Modified:  DAS, 2017-10-19 (Added standard_name and long_name attributes)
+;    Modified:  DAS, 2017-10-26 (Added date and datesec variables)
+;    Modified:  DAS, 2017-10-28 (Added sicbcs and tosbcs variables)
+;    Modified:  DAS, 2018-02-15 (Added ta variable)
+;    Modified:  DAS, 2018-02-23 (Added mmrvolc variable)
+;    Modified:  DAS, 2018-03-11 (Added region variable)
+;    Modified:  DAS, 2018-03-15 (Added hurs, huss variables)
+;    Modified:  DAS, 2018-06-28 (Added area, layer, namelong, nameshort, 
+;        regionid, and regionmask variables, modified region variable)
+;    Modified:  DAS, 2018-08-29 (Corrected standard precipitation units)
+;    Modified:  DAS, 2018-09-18 (Added "_" where missing in sic standard_name)
+;    Modified:  DAS, 2018-09-28 (Added ts variable)
+;    Modified:  DAS, 2018-11-12 (Added attributes to date and datesec variables)
+;-
+
+;***********************************************************************
+
+; The region area variable
+<variable>
+  <label>
+    area
+  </label>
+  <standard_name>
+    region_area
+  </standard_name>
+  <long_name>
+    Region_Area
+  </long_name>
+  <units>
+    km2
+  </units>
+</variable>
+
+; The concentration of CFC11 variable
+<variable>
+  <label>
+    cfc11global,conc_cfc11,F11
+  </label>
+  <standard_name>
+    mole_fraction_of_cfc11_in_air
+  </standard_name>
+  <long_name>
+    Global Mean Mole Fraction of CFC11
+  </long_name>
+  <units>
+    1e-12
+  </units>
+</variable>
+
+; The concentration of CFC12 variable
+<variable>
+  <label>
+    cfc12global,conc_cfc12,F12
+  </label>
+  <standard_name>
+    mole_fraction_of_cfc12_in_air
+  </standard_name>
+  <long_name>
+    Global Mean Mole Fraction of CFC12
+  </long_name>
+  <units>
+    1e-12
+  </units>
+</variable>
+
+; The concentration of CH4 variable
+<variable>
+  <label>
+    ch4global,conc_ch4,CH4
+  </label>
+  <standard_name>
+    mole_fraction_of_methane_in_air
+  </standard_name>
+  <long_name>
+    Global Mean Mole Fraction of CH4
+  </long_name>
+  <units>
+    1e-9
+  </units>
+</variable>
+
+; The total cloud fraction
+<variable>
+  <label>
+    clt
+  </label>
+  <standard_name>
+    cloud_area_fraction
+  </standard_name>
+  <long_name>
+    Total Cloud Fraction
+  </long_name>
+  <units>
+    %
+  </units>
+</variable>
+
+; The concentration of CO2 variable
+<variable>
+  <label>
+    co2global,conc_co2,CO2
+  </label>
+  <standard_name>
+    mole_fraction_of_carbon_dioxide_in_air
+  </standard_name>
+  <long_name>
+    Global Mean Mole Fraction of CO2
+  </long_name>
+  <units>
+    1e-6
+  </units>
+</variable>
+
+; The CESM date variable
+<variable>
+  <label>
+    date
+  </label>
+  <standard_name>
+    Date
+  </standard_name>
+  <long_name>
+    current date (YYYYMMDD)
+  </long_name>
+  <units>
+    yyyymmdd
+  </units>
+  <axis>
+    T
+  </axis>
+</variable>
+
+; The CESM datesec variable
+<variable>
+  <label>
+    datesec
+  </label>
+  <standard_name>
+    Seconds_Into_Day
+  </standard_name>
+  <long_name>
+    current seconds of current date
+  </long_name>
+  <units>
+    s
+  </units>
+  <axis>
+    T
+  </axis>
+</variable>
+
+; The height or depth variable or dimension
+<variable>
+  <label>
+    height,z,LEV,lev
+  </label>
+  <standard_name>
+    height
+  </standard_name>
+  <long_name>
+    height
+  </long_name>
+  <units>
+    m
+  </units>
+  <axis>
+    Z
+  </axis>
+</variable>
+
+; The surface latent heat flux variable
+<variable>
+  <label>
+    hfls
+  </label>
+  <standard_name>
+    surface_upward_latent_heat_flux
+  </standard_name>
+  <long_name>
+    Surface Upward Latent Heat Flux
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The near-surface relative humidity
+<variable>
+  <label>
+    hurs
+  </label>
+  <standard_name>
+    relative_humidity
+  </standard_name>
+  <long_name>
+    Near-Surface Relative Humidity
+  </long_name>
+  <units>
+    %
+  </units>
+</variable>
+
+; The near-surface specific humidity
+<variable>
+  <label>
+    huss
+  </label>
+  <standard_name>
+    specific_humidity
+  </standard_name>
+  <long_name>
+    Near-Surface Specific Humidity
+  </long_name>
+  <units>
+    fraction
+  </units>
+</variable>
+
+; The surface sensible heat flux variable
+<variable>
+  <standard_name>
+    surface_upward_sensible_heat_flux
+  </standard_name>
+  <long_name>
+    Surface Upward Sensible Heat Flux
+  </long_name>
+  <label>
+    hfss
+  </label>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The latitude variable or dimension
+<variable>
+  <label>
+    lat,latitude,latitude0,latitude1,Y1,y,LAT
+  </label>
+  <standard_name>
+    latitude
+  </standard_name>
+  <long_name>
+    latitude
+  </long_name>
+  <units>
+    degrees north
+  </units>
+  <axis>
+    Y
+  </axis>
+</variable>
+
+; The region layer variable
+<variable>
+  <label>
+    layer
+  </label>
+  <standard_name>
+    layer
+  </standard_name>
+  <long_name>
+    Layer
+  </long_name>
+  <units>
+    integer
+  </units>
+</variable>
+
+; The sulphate aerosol burden variable
+<variable>
+  <label>
+    loadso4,burden_so4,BURDEN_RESCALED,trm03,SULFMMR
+  </label>
+</variable>
+
+; The longitude variable or dimension
+<variable>
+  <label>
+    lon,longitude,longitude0,longitude1,X1,x,LON
+  </label>
+  <standard_name>
+    longitude
+  </standard_name>
+  <long_name>
+    longitude
+  </long_name>
+  <units>
+    degrees east
+  </units>
+  <axis>
+    X
+  </axis>
+</variable>
+
+<variable>
+  <label>
+    mmrvolc
+  </label>
+  <standard_name>
+    volcanic_aerosol_mass_mixing_ratio
+  </standard_name>
+  <long_name>
+    Mass Mixing Ratio of Volcanic Aerosol
+  </long_name>
+  <units>
+    kg kg-1
+  </units>
+</variable>
+
+; The region long name variable
+<variable>
+  <label>
+    namelong
+  </label>
+  <standard_name>
+    region_name
+  </standard_name>
+  <long_name>
+    Region_Name
+  </long_name>
+</variable>
+
+; The region short name variable
+<variable>
+  <label>
+    nameshort
+  </label>
+  <standard_name>
+    region_label
+  </standard_name>
+  <long_name>
+    Region_Label
+  </long_name>
+</variable>
+
+; The concentration of N2O variable
+<variable>
+  <label>
+    n2oglobal,conc_n2o,N2O
+  </label>
+  <standard_name>
+    mole_fraction_of_nitrous_oxide_in_air
+  </standard_name>
+  <long_name>
+    Global Mean Mole Fraction of N2O
+  </long_name>
+  <units>
+    1e-9
+  </units>
+</variable>
+
+; The surface altitude variable
+<variable>
+  <label>
+    orog,ZSTAR
+  </label>
+  <standard_name>
+    surface_altitude
+  </standard_name>
+  <long_name>
+    Surface Altitude
+  </long_name>
+  <units>
+    m
+  </units>
+</variable>
+
+; The vertical pressure level variable or dimension
+<variable>
+  <label>
+    plev
+  </label>
+  <standard_name>
+    air_pressure
+  </standard_name>
+  <long_name>
+    pressure
+  </long_name>
+  <units>
+    Pa
+  </units>
+  <axis>
+    Z
+  </axis>
+</variable>
+
+; The precipitation variable
+<variable>
+  <label>
+    pr,prate,precip,PRATE,ppt_rate_ts,ppt
+  </label>
+  <standard_name>
+    precipitation_flux
+  </standard_name>
+  <long_name>
+    Precipitation
+  </long_name>
+  <units>
+    kg m-2 s-1
+  </units>
+</variable>
+
+; The region variable
+<variable>
+  <label>
+    region
+  </label>
+  <standard_name>
+    region_index
+  </standard_name>
+  <long_name>
+    Region_Index
+  </long_name>
+  <units>
+    index
+  </units>
+</variable>
+
+; The regionid variable
+<variable>
+  <label>
+    regionid
+  </label>
+  <standard_name>
+    region_id
+  </standard_name>
+  <long_name>
+    Region_Identifier
+  </long_name>
+</variable>
+
+; The regionmask variable
+<variable>
+  <label>
+    regionmask,nation
+  </label>
+  <standard_name>
+    region_mask
+  </standard_name>
+  <long_name>
+    Region_Mask
+  </long_name>
+  <units>
+    fraction
+  </units>
+</variable>
+
+; The downwelling longwave radiation at surface variable
+<variable>
+  <label>
+    rlds
+  </label>
+  <standard_name>
+    surface_downwelling_longwave_flux_in_air
+  </standard_name>
+  <long_name>
+    Surface Downwelling Longwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The net longwave radiation at surface variable
+<variable>
+  <label>
+    rlns
+  </label>
+  <standard_name>
+    surface_net_longwave_flux_in_air
+  </standard_name>
+  <long_name>
+    Surface Net Longwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The upwelling longwave radiation at surface variable
+<variable>
+  <label>
+    rlus
+  </label>
+  <standard_name>
+    surface_upwelling_longwave_flux_in_air
+  </standard_name>
+  <long_name>
+    Surface Upwelling Longwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The upwelling longwave radiation at surface the top of the atmosphere
+<variable>
+  <label>
+    rlut
+  </label>
+  <standard_name>
+    toa_outgoing_longwave_flux
+  </standard_name>
+  <long_name>
+    TOA Outgoing Longwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The downwelling shortwave radiation at surface variable
+<variable>
+  <label>
+    rsds
+  </label>
+  <standard_name>
+    surface_downwelling_shortwave_flux_in_air
+  </standard_name>
+  <long_name>
+    Surface Downwelling Shortwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The downwelling shortwave radiation at the top of the atmosphere
+<variable>
+  <label>
+    rsdt,dswrf
+  </label>
+  <standard_name>
+    toa_incoming_shortwave_flux
+  </standard_name>
+  <long_name>
+    TOA Incident Shortwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The net shortwave radiation at surface variable
+<variable>
+  <label>
+    rsns
+  </label>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The upwelling shortwave radiation at surface variable
+<variable>
+  <label>
+    rsus
+  </label>
+  <standard_name>
+    surface_upwelling_shortwave_flux_in_air
+  </standard_name>
+  <long_name>
+    Surface Upwelling Shortwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The upwelling shortwave radiation at surface the top of the atmosphere
+<variable>
+  <label>
+    rsut,uswrf
+  </label>
+  <standard_name>
+    toa_outgoing_shortwave_flux
+  </standard_name>
+  <long_name>
+    TOA Outgoing Shortwave Radiation
+  </long_name>
+  <units>
+    W m-2
+  </units>
+</variable>
+
+; The near-surface wind speed
+<variable>
+  <label>
+    sfcWind
+  </label>
+  <standard_name>
+    wind_speed
+  </standard_name>
+  <long_name>
+    Near-Surface Wind Speed
+  </long_name>
+  <units>
+    m s-1
+  </units>
+</variable>
+
+; The land area fraction variable
+<variable>
+  <label>
+    sftlf,LSEA,land,lsm
+  </label>
+  <standard_name>
+    land_area_fraction
+  </standard_name>
+  <long_name>
+    Land Area Fraction (HD)
+  </long_name>
+  <units>
+    %
+  </units>
+</variable>
+
+; Sea ice concentration variable
+<variable>
+  <label>
+    sic,ice_cov_prediddle
+  </label>
+  <standard_name>
+    sea_ice_area_fraction
+  </standard_name>
+  <long_name>
+    Sea Ice Area Fraction
+  </long_name>
+  <units>
+    %
+  </units>
+</variable>
+
+; The Sheng-Zwiers-1998 adjusted sea ice concentration variable
+<variable>
+  <label>
+    sicbcs,ice_cov
+  </label>
+  <standard_name>
+    sea_ice_area_fraction
+  </standard_name>
+  <long_name>
+    Constructed mid-month Sea Ice Area Fraction
+  </long_name>
+  <units>
+    %
+  </units>
+  <comment>
+    Adjusted to return original values upon averaging of linearly interpolated values, following:  Sheng and Zwiers (1998), Climate Dynamics, 14, 609-613).
+  </comment>
+</variable>
+
+; The air temperature variable
+<variable>
+  <label>
+    ta
+  </label>
+  <standard_name>
+    air_temperature
+  </standard_name>
+  <long_name>
+    Air Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+</variable>
+
+; The near-surface air temperature variable
+<variable>
+  <label>
+    tas,temp,temp_1,TSTAR,temanom,TMP,p2t,air,tem,trefht,TREFHT,TS,temp_15
+  </label>
+  <standard_name>
+    air_temperature
+  </standard_name>
+  <long_name>
+    Near-Surface Air Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+</variable>
+
+; The daily maximum near-surface air temperature variable
+<variable>
+  <label>
+    tasmax
+  </label>
+  <standard_name>
+    air_temperature
+  </standard_name>
+  <long_name>
+    Daily Maximum Near-Surface Air Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+</variable>
+
+; The daily minimum near-surface air temperature variable
+<variable>
+  <label>
+    tasmin
+  </label>
+  <standard_name>
+    air_temperature
+  </standard_name>
+  <long_name>
+    Daily Maximum Near-Surface Air Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+</variable>
+
+; The surface ocean temperature variable
+<variable>
+  <label>
+    tos,sst,sea_water_potential_temperature,SST_cpl_prediddle
+  </label>
+  <standard_name>
+    sea_surface_temperature
+  </standard_name>
+  <long_name>
+    Sea Surface Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+</variable>
+
+; The Sheng-Zwiers-1998 adjusted surface ocean temperature variable
+<variable>
+  <label>
+    tosbcs,SST_cpl
+  </label>
+  <standard_name>
+    sea_surface_temperature
+  </standard_name>
+  <long_name>
+    Constructed mid-month Sea Surface Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+  <comment>
+    Adjusted to return original values upon averaging of linearly interpolated values, following:  Sheng and Zwiers (1998), Climate Dynamics, 14, 609-613).
+  </comment>
+</variable>
+
+; The surface temperature variable
+<variable>
+  <label>
+    ts
+  </label>
+  <standard_name>
+    surface_temperature
+  </standard_name>
+  <long_name>
+    Surface Temperature
+  </long_name>
+  <units>
+    K
+  </units>
+</variable>
+
+; The time variable or dimension
+<variable>
+  <label>
+    time,t,t_1,TIME_COUNTER,TIME,time0
+  </label>
+  <standard_name>
+    time
+  </standard_name>
+  <long_name>
+    time
+  </long_name>
+  <axis>
+    T
+  </axis>
+</variable>
+
+; The zonal wind variable
+<variable>
+  <label>
+    ua,u
+  </label>
+  <standard_name>
+    eastward_wind
+  </standard_name>
+  <long_name>
+    Eastward Wind
+  </long_name>
+  <units>
+    m s-1
+  </units>
+</variable>
+
+; The near-surface zonal wind variable
+<variable>
+  <label>
+    uas
+  </label>
+  <standard_name>
+    eastward_wind
+  </standard_name>
+  <long_name>
+    Eastward Near-Surface Wind
+  </long_name>
+  <units>
+    m s-1
+  </units>
+</variable>
+
+; The meridional wind variable
+<variable>
+  <label>
+    va,v
+  </label>
+  <standard_name>
+    northward_wind
+  </standard_name>
+  <long_name>
+    Northward Wind
+  </long_name>
+  <units>
+    m s-1
+  </units>
+</variable>
+
+; The near-surface meridional wind variable
+<variable>
+  <label>
+    vas
+  </label>
+  <standard_name>
+    northward_wind
+  </standard_name>
+  <long_name>
+    Northward Near-Surface Wind
+  </long_name>
+  <units>
+    m s-1
+  </units>
+</variable>
+
+; Omega
+<variable>
+  <label>
+    wap
+  </label>
+  <standard_name>
+    langrangian_tendency_of_air_pressure
+  </standard_name>
+  <long_name>
+    omega (=dp/dt)
+  </long_name>
+  <units>
+    Pa s-1
+  </units>
+</variable>
+
+; Geopotential height
+<variable>
+  <label>
+    zg
+  </label>
+  <standard_name>
+    geopotential_height
+  </standard_name>
+  <long_name>
+    Geopotential Height
+  </long_name>
+  <units>
+    m
+  </units>
+</variable>
